@@ -1,0 +1,61 @@
+import java.util.*;
+class stack
+{
+public static void main(String args[])
+{
+Stack<Integer> s=new Stack<Integer>();
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int k=n;
+for(int i=0;i<n;i++)
+{
+int m=sc.nextInt();
+s.push(m);
+}
+int t,flag=1;
+t=s.pop();
+int l=s.peek();
+k--;
+boolean v=s.empty();
+if(t>l)
+{
+
+while(v!=true)
+{
+t=s.pop();
+k--;
+if(k>1)
+{
+if(t<s.peek())
+{
+flag=0;
+break;
+}
+}
+v=s.empty();
+}
+}
+if(t<l)
+{
+
+while(v!=true)
+{
+t=s.pop();
+k--;
+if(k>1)
+{
+if(t>s.peek())
+{
+flag=0;
+break;
+}
+}
+v=s.empty();
+}
+}
+if(flag==1)
+System.out.println("consecutive order");
+else
+System.out.println("not in consecutive order");
+}
+}

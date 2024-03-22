@@ -1,3 +1,4 @@
+//1
 import java.util.*;
  class recursion {
     static void rec(int a[],int i,int n,LinkedList<Integer> l)
